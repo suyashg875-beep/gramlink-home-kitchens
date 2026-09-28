@@ -37,7 +37,8 @@ export function useArea() {
 }
 
 /** Product photos live in private storage; get short signed links to show them. */
-export function useSignedImages(paths: string[]) {
+export function useSignedImages(input: (string | null | undefined)[]) {
+  const paths = input.filter((p): p is string => !!p);
   const key = paths.join("|");
   return useQuery({
     queryKey: ["signed-images", key],

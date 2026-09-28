@@ -56,7 +56,7 @@ function SellerPage() {
       ) : (
         <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
           {products.map((p) => (
-            <ProductCard key={p.id} id={p.id} name={p.name} price={Number(p.price)} category={p.category} image={urls[p.image_urls[0]]} />
+            <ProductCard key={p.id} id={p.id} name={p.name} price={Number(p.price)} category={p.category} image={urls[p.image_urls[0] ?? ""]} />
           ))}
         </div>
       )}

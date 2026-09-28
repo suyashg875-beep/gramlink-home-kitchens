@@ -145,7 +145,7 @@ function Home() {
                 name={p.name}
                 price={Number(p.price)}
                 category={p.category}
-                image={urls[p.image_urls[0]]}
+                image={urls[p.image_urls[0] ?? ""]}
                 sellerName={p.seller_profiles.business_name}
               />
             ))}

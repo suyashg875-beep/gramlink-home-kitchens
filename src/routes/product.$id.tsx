@@ -77,7 +77,7 @@ function ProductPage() {
   return (
     <Page>
       <div className="aspect-square overflow-hidden rounded-3xl border bg-card">
-        <ProductThumb url={urls[p.image_urls[active]]} category={p.category} />
+        <ProductThumb url={urls[p.image_urls[active] ?? ""]} category={p.category} />
       </div>
       {p.image_urls.length > 1 && (
         <div className="mt-2 flex gap-2">

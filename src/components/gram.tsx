@@ -152,7 +152,7 @@ export function Empty({ emoji, title, children }: { emoji: string; title: string
   );
 }
 
-export function ProductThumb({ url, category, className }: { url?: string; category: string; className?: string }) {
+export function ProductThumb({ url, category, className }: { url?: string | undefined; category: string; className?: string }) {
   return url ? (
     <img src={url} alt="" className={cn("h-full w-full object-cover", className)} loading="lazy" />
   ) : (
@@ -164,7 +164,7 @@ export function ProductThumb({ url, category, className }: { url?: string; categ
 
 export function ProductCard({
   id, name, price, category, image, sellerName,
-}: { id: string; name: string; price: number; category: string; image?: string; sellerName?: string }) {
+}: { id: string; name: string; price: number; category: string; image?: string | undefined; sellerName?: string }) {
   return (
     <Link to="/product/$id" params={{ id }} className="overflow-hidden rounded-2xl border bg-card shadow-sm transition active:scale-[0.98]">
       <div className="aspect-square">
