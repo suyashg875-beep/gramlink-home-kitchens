@@ -31,7 +31,10 @@ function ChooseRole() {
 
   const pick = async (r: "customer" | "seller") => {
     const { error } = await supabase.rpc("choose_role", { _role: r });
-    if (error) return toast.error(errMsg(error));
+    if (error) {
+      toast.error(errMsg(error));
+      return;
+    }
     await refreshRole();
   };
 
